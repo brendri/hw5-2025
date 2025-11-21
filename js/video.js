@@ -40,9 +40,10 @@ document.querySelector("#faster").addEventListener("click", function() {
 //Skip Ahead: Advance the current video by 10 seconds.  If the video length has been exceeded go back to the start of the video - no farther.   Log the current location of the video.//
 
 document.querySelector("#skip").addEventListener("click", function() {
-	video += 10; 
 	if (video.currentTime + 10 >= video.duration) {
 		video.currentTime = 0;
+	} else {
+		video.currentTime += 10;
 	}
 	console.log("Current location is ", video.currentTime);
 });
@@ -77,7 +78,8 @@ document.querySelector("#vintage").addEventListener("click", function() {
 
 document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove("oldSchool");
-});
+} );	
+
 
 
 
